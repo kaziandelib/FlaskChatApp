@@ -1,0 +1,4 @@
+Create venv using:  python3.12 -m venv chatappenv
+Activate venv using: source chatappenv/bin/activate
+
+Most of the code comments was done using ChatGPT

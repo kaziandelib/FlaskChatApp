@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<!-- This line extends the 'base.html' template, meaning that all the basic layout (header, footer, etc.) from the base template will be inherited here. -->
+
+{% block content %}
+<!-- The block content section is where the page-specific content will be inserted. It overrides the content block defined in the base template. -->
+
+    <h1>Register</h1>
+    <!-- A heading for the registration page. -->
+
+    {% with messages = get_flashed_messages() %}
+    <!-- 'with' is a Jinja control structure that allows you to define a temporary variable (in this case, 'messages') which stores the list of flashed messages from the Flask backend. -->
+
+        {% if messages %}
+        <!-- If there are any flashed messages, display them. -->
+
+            <div class="flash">{{ messages[0] }}</div>
+            <!-- This will display the first flashed message (if any) in a div with the class 'flash'. This class can be styled to highlight important messages, like success or error notifications. -->
+
+        {% endif %}
+    {% endwith %}
+    <!-- End of the 'with' block that handles the flashing mechanism. -->
+
+    <!-- The registration form where users can input their username and password. -->
+    <form action="{{ url_for('register') }}" method="post">
+    <!-- The form's action is set to the URL for the 'register' route, and it uses the POST method to send data. -->
+
+        <input type="text" name="username" placeholder="Enter Username Here" required>
+        <!-- The username input field. The 'name' attribute should match the expected form data in the backend. The 'required' attribute ensures the field must be filled. -->
+
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <!-- The password input field. Similar to the username field, it’s marked as 'required' to enforce input validation. -->
+
+        <button type="submit">Register</button>
+        <!-- The submit button that will send the form data when clicked. -->
+
+    </form>
+
+    <!-- A link for users who already have an account to log in. -->
+    <p>Have an account? <a href="{{ url_for('login') }}">Login Here!</a></p>
+    <!-- This link navigates to the login page if the user already has an account. -->
+    
+{% endblock %}
+<!-- This ends the 'content' block that contains the page-specific content. It will replace the content block in 'base.html' when the page is rendered. -->

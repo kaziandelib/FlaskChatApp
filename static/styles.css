@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+/* This universal selector ensures that padding and border are included in the element's total width and height, preventing layout issues where borders/padding might expand elements beyond their expected size. */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #1f1f1f;
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+}
+/* Styling the body of the page:
+   - Sets the font family to Arial (or Helvetica or sans-serif if Arial isn't available).
+   - The background color is dark (#1f1f1f), and the text color is white (#fff).
+   - Margins are reset to 0 to avoid default spacing.
+   - Padding of 10px is added to give some space around the content. */
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* .container styles:
+   - Restricts the container width to a maximum of 600px, ensuring it doesn't stretch too wide.
+   - The container is centered horizontally with 'margin: 50px auto', giving a 50px space above and below.
+   - Padding of 20px is applied for internal spacing.
+   - The background color is dark (#333), with rounded corners (12px radius) and a subtle box shadow for a floating effect. */
+
+.container a {
+    color: rgb(215, 225, 179);
+}
+/* Styling links within the .container:
+   - The links' text color is a soft light yellowish-green (rgb(215, 225, 179)). */
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Center-aligns the main heading and adds a 20px margin below it for spacing. */
+
+input[type='text'], input[type='password'] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #565;
+    border-radius: 5px;
+    background: #444;
+    color: #fff;
+}
+/* Styles for text and password input fields:
+   - Both inputs are full-width (100%) of their container.
+   - Padding of 10px inside the input for comfortable text input.
+   - Adds 10px vertical margin between inputs for separation.
+   - A solid border (#565), rounded corners (5px), dark background (#444), and white text. */
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* Styling for buttons:
+   - Full width (100%) and 15px padding for larger clickable area.
+   - Green background (#4caf50), white text, no border, and rounded corners (4px).
+   - The 'cursor: pointer' makes the pointer change to a hand when hovering over the button, indicating it's clickable.
+   - Font size set to 16px for readability. */
+
+button:hover {
+    background: #45a049;
+}
+/* When the user hovers over the button, the background color darkens slightly (#45a049) to indicate the button is interactive. */
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+/* .chat-container:
+   - Uses flexbox layout with vertical stacking of children.
+   - The height is set to 500px, giving a fixed height for the entire chat container. */
+
+.chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 3px solid #565;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #444;
+}
+/* .chat-box:
+   - Flexbox is used to allow the box to grow and fill available space within its container (flex-grow: 1).
+   - Vertical scrolling is enabled with 'overflow-y: auto' so users can scroll if messages exceed the box's height.
+   - 3px border (#565), 4px border-radius for rounded corners, 12px padding for internal spacing.
+   - Margin added at the bottom for separation from other elements. Background is dark (#444). */
+
+.chat-box div {
+    margin-bottom: 12px;
+}
+/* Each chat message inside .chat-box has a 12px margin at the bottom to provide spacing between individual messages. */
+
+.chat-box strong {
+    color: #4caf50;
+}
+/* Any text wrapped in a <strong> tag within the .chat-box will have a green color (#4caf50), typically used for the username in chat messages. */
+
+#message {
+    flex-grow: 0;
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #565;
+    border-radius: 6px;
+    background: #444;
+    color: #fff;
+}
+/* The message input field:
+   - Does not grow within the flex container (flex-grow: 0).
+   - 12px margin at the bottom and padding inside for spacing.
+   - 1px solid border (#565), 6px border-radius, dark background (#444), and white text. */
+
+#send-btn {
+    flex-grow: 0;
+    padding: 12px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* The send button:
+   - No growth within the flex container (flex-grow: 0).
+   - 12px padding for a comfortable click area, green background (#4caf50), white text, no border, and 6px border-radius.
+   - 'cursor: pointer' makes it appear clickable, and the font size is 16px. */
+
+#send-btn:hover {
+    background: #45a049;
+}
+/* When the send button is hovered over, the background color darkens slightly (#45a049) to indicate interactivity. */
+
+.flash {
+    color: rgb(255, 0, 0);
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* The .flash class is used for displaying flash messages (like error or success messages).
+   - The text color is red (rgb(255, 0, 0)).
+   - The text is center-aligned, and a 20px margin is applied at the bottom to give some space from the content below. */

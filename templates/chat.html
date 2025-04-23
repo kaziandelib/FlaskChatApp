@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!-- This line extends the 'base.html' template. The content defined in 'base.html' (like the header, footer, navbar, etc.) will be inherited and displayed on this page. -->
+
+{% block content %}
+<!-- This block defines the content that will replace the content block in the 'base.html' template for this specific page. -->
+
+    <h1>Chat</h1>
+    <!-- A heading for the chat page. It provides context to the user that they are on the chat page. -->
+
+    <div class="chat-container">
+    <!-- This div wraps the entire chat section for layout purposes. The 'chat-container' class can be used to define styles specific to the chat interface. -->
+
+        <div class="chat-box" id="chat-box">
+        <!-- This div holds the actual chat messages. It will display the messages exchanged between the user and others. -->
+        
+            <input type="text" id="message" placeholder="Enter message" required>
+            <!-- The input field where users type their messages. The 'id' attribute is used to identify this input in the JavaScript code, and the 'required' attribute ensures that the user cannot send an empty message. -->
+
+            <button id="send-btn">Send</button>
+            <!-- The button that, when clicked, sends the typed message to the chat. The 'id' attribute is used for targeting the button in JavaScript. -->
+
+            <p>Logged in as: {{ username }} | <a href="{{ url_for('logout') }}">Log Out</a></p>
+            <!-- A paragraph showing the username of the logged-in user. The '{{ username }}' variable is dynamically replaced by the username passed from the backend.
+            There's also a logout link that redirects the user to the 'logout' route, allowing them to log out from the chat. -->
+
+        </div>
+        <!-- Closing the chat-box div. -->
+
+    </div>
+    <!-- Closing the chat-container div. -->
+
+{% endblock %}
+<!-- This marks the end of the content block. Everything inside this block will replace the 'content' section of the 'base.html' template when rendered. -->
